@@ -12,31 +12,31 @@ The system is trained using a labeled image dataset, resized to 224x224 pixels. 
 ## 🚀 Features
 
 * ✅ Multi-class garbage classification
-* ✅ Uses VGG16 pre-trained on ImageNet
 * ✅ Transfer learning with custom layers
 * ✅ Data augmentation for improved generalization
 * ✅ Saves best model using checkpoints
-* ✅ Ready for deployment in smart waste sorting systems
+* ✅ Ready to use in smart waste sorting systems
 
 ## 🖼️ Classes
 
-* **Plastic**
-* **Paper**
+* **cardboad**
 * **Metal**
 * **Glass**
 * **Organic Waste**
+* **other**
 
 ## 🛠️ Tech Stack
 
 * **Python**
 * **TensorFlow / Keras**
 * **NumPy & Matplotlib**
+* **gradio(for interface)**
 
 ## 📂 Dataset
 
 Images are labeled into 5 classes. Preprocessing includes:
 
-* Resizing to **224x224** pixels
+* Resizing to **225x225** pixels
 * Normalization
 * Data augmentation (rotation, flipping, zooming)
 
@@ -74,19 +74,16 @@ pip install -r requirements.txt
 ### 3. Train the model
 
 ```python
-python train.py
+python app.py
 ```
 
-### 4. Load and predict
+###4. Upload image and get result
 
-```python
-from tensorflow.keras.models import load_model
-model = load_model("vgg16_garbage_classification_model.h5")
-```
+The application automatically loads the trained VGG16 model
 
-## 📦 Saved Model
+Upload an image of garbage through the interface
 
-* **vgg16\_garbage\_classification\_model.h5**
+The system predicts and displays the garbage category (e.g., Plastic, Glass, Paper, etc.)
 
 ## 💡 Future Work
 
